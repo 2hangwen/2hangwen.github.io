@@ -23,6 +23,15 @@
            $("div#talk").append(tag);
 
        }
+       
+       function add_log(){
+           var tag="<a href='some_log/1.html'></a>"
+           $("div#log").append(tag);
+       }
+       
+       $(document).ready(function(){
+           add_log();
+       })
     </script>
 </head>
 
@@ -36,7 +45,9 @@
     <input id="say"  type="text" style="width: 60%" placeholder="baby,say something to me" />
     <input type="button" onclick="add_say()" value="发送" />
 </div>
-<iframe id="log" src="some_log/1.log" frameborder="0" style="width: 70%;height:40%;" ></iframe>
+<div id="log">
+    
+</div>
 </body>
 
 </html>
