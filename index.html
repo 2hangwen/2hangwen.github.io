@@ -2,28 +2,39 @@
 
 <head>
 
-<title>hello zhangwen</title>
-<script  src="https://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
-<script>
-show_jpg.i=-1;
-show_jpg.items=["2012.jpg","https://7xkszy.com2.z0.glb.qiniucdn.com/pics/vol/579f80669ace2.jpg"]
-function  show_jpg(n) {
-    if(show_jpg.i < 0){
-        show_jpg.i=n;
-    }
-    $("#switch_jpg >img").prop("src",show_jpg.items[show_jpg.i]);
-    --show_jpg.i;
-}
+    <title>hello zhangwen</title>
+    <script  src="https://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+        show_jpg.i=-1;
+        show_jpg.items=["2012.jpg","https://7xkszy.com2.z0.glb.qiniucdn.com/pics/vol/579f80669ace2.jpg"]
+        function  show_jpg(n) {
+            if(show_jpg.i < 0){
+                show_jpg.i=n;
+            }
+            $("#switch_jpg >img").prop("src",show_jpg.items[show_jpg.i]);
+            --show_jpg.i;
+        }
+        setTimeout("setInterval(show_jpg,5000,1)",30);
 
- setTimeout("setInterval(show_jpg,5000,1)",30);
+       function add_say(){
+          var get_say= $("div#talk > input#say").val();
+           console.log(get_say);
+           var tag="<h6>"+get_say+"</h6>";
+           $("div#talk").append(tag);
 
-</script>
+       }
+    </script>
 </head>
 
 <body src="201">
 <h1 style="text-align: center;color: orangered" >保持冷静，不断向前</h1>
 <div id="switch_jpg">
-<img  id="rock" style="width: 620px;height: 410px;" src="2012.jpg">
+    <img  id="rock" style="width: 620px;height: 410px;" src="2012.jpg">
+</div>
+<div id="talk">
+    <p>say something to me</p>
+    <input id="say"  type="text" style="width: 60%" placeholder="baby,say something to me" />
+    <input type="button" onclick="add_say()" value="发送" />
 </div>
 </body>
 
