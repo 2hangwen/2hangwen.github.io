@@ -25,8 +25,8 @@
 
        }
        
-       function add_log(text){
-           var tag="<a href='some_log/1.html' style='text-decoration: none'>"+text+"</a>"
+       function add_log(path,text){
+           var tag="<a href="+path+" style='text-decoration: none'>"+text+"</a>"
            $("div#log").append(tag);
        }
        
@@ -49,7 +49,7 @@
             }
             if (tit){
               // alert(tit);
-               add_log(tit);
+               add_log($(key).prop("src"),tit);
                $(key).prop("src","");
             } 
         }
