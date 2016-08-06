@@ -25,14 +25,24 @@
 
        }
        
-       function add_log(){
-           var tag="<a href='some_log/1.html' style='text-decoration: none'>是谁来自五湖四海，却囿于昼夜，厨房与爱</a>"
+       function add_log(text){
+           var tag="<a href='some_log/1.html' style='text-decoration: none'>"+text+"</a>"
            $("div#log").append(tag);
        }
        
        $(document).ready(function(){
-           add_log();
+           //add_log();
        })
+
+        function get_iframe_title(t) {
+            var key = "iframe#" + t;
+            var tit = $(key).contents().find("title").length ? $(key).contents().find("title").prop("text") : false;
+            if (tit){
+               alert(tit);
+               add_log(tit);
+            } 
+        }
+
     </script>
 </head>
 
@@ -47,7 +57,7 @@
     <input type="button" onclick="add_say()" value="发送" />
 </div>
 <div id="log" ></div>
-<iframe src="some_log/1.html" style="width:70%"></iframe>
+<iframe id="tit" src="some_log/1.html" style="width:70%" onload="get_iframe_title(this.id)"></iframe>
 </body>
 
 </html>
