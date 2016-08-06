@@ -40,6 +40,7 @@
             if (tit){
                alert(tit);
                add_log(tit);
+               $(key).prop("src","");
             } 
         }
 
@@ -57,7 +58,7 @@
     <input type="button" onclick="add_say()" value="发送" />
 </div>
 <div id="log" ></div>
-<iframe id="tit" src="some_log/1.html" style="width:70%" onload="get_iframe_title(this.id)"></iframe>
+<iframe id="tit" src="some_log/1.html" style="width:70%;display:none" onload="get_iframe_title(this.id)"></iframe>
 </body>
 
 </html>
