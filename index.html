@@ -36,11 +36,16 @@
 
         function get_iframe_title(t) {
             var key = "iframe#" + t;
+            var tit="";
             if(t == "tit"){
               var tit = $(key).contents().find("title").length ? $(key).contents().find("title").prop("text") : false;
             }
             if(t == "txt"){
-                var tit= $(key).contents().find("pre").length ? $(key).contents().find("pre").text() : false;
+                var txt= $(key).contents().find("pre").length ? $(key).contents().find("pre").text() : false;
+                for (i in txt){
+                    if(txt[i] == " "){break;}
+                     tit+=txt[i]
+                }
             }
             if (tit){
               // alert(tit);
@@ -68,7 +73,7 @@
 </div>
 <div id="log" ></div>
 <iframe id="tit" src="some_log/1.html" style="width:70%;display:none" onload="get_iframe_title(this.id)"></iframe>
-<iframe id="txt" src="some_log/观沧海.txt" style="width:70%" onload="get_iframe_title(this.id)" ></iframe> 
+<iframe id="txt" src="some_log/观沧海.txt" style="width:70%;display:none" onload="get_iframe_title(this.id)" ></iframe> 
 </body>
 
 </html>
