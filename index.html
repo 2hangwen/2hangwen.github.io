@@ -16,6 +16,12 @@
             --show_jpg.i;
         }
         setTimeout("setInterval(show_jpg,5000,1)",30);
+        
+        function pause_show_jpg(){
+            $("#switch_jpg > img").mouseover(function(){
+               alert("hhhh"); 
+            });
+        }
 
        function add_say(){
           var get_say= $("div#talk > input#say").val();
@@ -32,6 +38,7 @@
        
        $(document).ready(function(){
            //add_log();
+           pause_show_jpg();
        })
 
         function get_iframe_title(t) {
