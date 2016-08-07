@@ -7,19 +7,27 @@
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script>
         show_jpg.i=-1;
+        var change=true;
         show_jpg.items=["http://7xkszy.com2.z0.glb.qiniucdn.com/pics/vol/5253ca6da1604.jpg","https://7xkszy.com2.z0.glb.qiniucdn.com/pics/vol/579f80669ace2.jpg"]
         function  show_jpg(n) {
             if(show_jpg.i < 0){
                 show_jpg.i=n;
             }
+            if(change){
             $("#switch_jpg >img").prop("src",show_jpg.items[show_jpg.i]);
             --show_jpg.i;
+            }
         }
         setTimeout("setInterval(show_jpg,5000,1)",30);
         
         function pause_show_jpg(){
             $("#switch_jpg > img").mouseover(function(){
-               alert("hhhh"); 
+               change=false;
+               console.log(change);
+            });
+            $("#switch_jpg > img").mouseleave(function(){
+               change=true;
+               console.log(change);
             });
         }
 
