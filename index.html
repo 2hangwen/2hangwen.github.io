@@ -34,13 +34,17 @@
                
             });
         }
-
+        
+        add_say.i=0;
        function add_say(){
           var get_say= $("div#talk > input#say").val();
            console.log(get_say);
-           var tag="<h6>"+get_say+"</h6>";
-           $("div#talk").append(tag);
-
+           if(get_say.length){
+               var tag="<h6>"+get_say+"</h6>";
+               localStorage.setItem(add_say.i,tag);
+               $("div#talk").append(tag);
+                ++add_say.i;
+           }
        }
        
        function add_log(path,text){
