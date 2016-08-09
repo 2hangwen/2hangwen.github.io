@@ -98,7 +98,7 @@
 </div>
 <div id="talk">
     <p>say something to me</p>
-    <input id="say"  type="text" style="width: 60%" placeholder="baby,say something to me" />
+    <input id="say"  type="text" style="width: 60%" placeholder="baby,say something to me" onkeypress="if(event.keyCode == 13){add_say()}" />
     <input type="button" onclick="add_say()" value="发送" />
 </div>
 <div id="log" ></div>
