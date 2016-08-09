@@ -47,6 +47,12 @@
            }
        }
        
+       function read_mem(){
+           for(i in localStorage){
+              $("div#talk").append(localStorage.getItem(i));
+           }
+       }
+       
        function add_log(path,text){
            var tag="<a href="+path+" style='text-decoration: none'>日志：  "+text+"</a><br/>"
            $("div#log").append(tag);
@@ -105,7 +111,7 @@
     <input id="say"  type="text" style="width: 60%" placeholder="baby,say something to me" onkeypress="if(event.keyCode == 13){add_say()}" />
     <input type="button" onclick="add_say()" value="发送" />
 </div>
-<div id="log" ></div>
+<div id="log" onload="read_mem()" ></div>
 <iframe id="tit" src="some_log/1.html" style="width:70%;display:none" onload="get_iframe_title(this.id)"></iframe>
 <iframe id="txt" src="some_log/see sea.txt" style="width:70%;display:none" onload="get_iframe_title(this.id)" ></iframe> 
 <!--iframe id="test" src="some_log/see sea.txt" style="width:70%;display:none"  ></iframe--> 
