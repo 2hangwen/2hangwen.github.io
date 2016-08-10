@@ -97,6 +97,12 @@
                       var t=all[0]["title"];
                       var b=all[0]["body"];
                       console.log(path+"/n"+t+"/n"+b+"/n");
+                      if(all[0]["comments"]){
+                          $.get(all[0]["comments_url"],function(data){
+                              console.log(date[0]["body"]);
+                              console.log(date[1]["body"]);
+                          })
+                      }
                       add_log(path,t+" : "+b);
             });
         }
