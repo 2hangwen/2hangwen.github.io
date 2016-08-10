@@ -86,6 +86,8 @@
         function read_issues(){
             var url="https://api.github.com/repos/hellooozhangwen/hellooozhangwen.github.io/issues";
             var all=$.get(url);
+            all=all["responseText"];
+            //把string转为json
             var arr=JSON.parse(all);
             var path=arr[0]["html_url"];
             var t=arr[0]["titile"];
