@@ -83,8 +83,14 @@
             } 
         }
         
-        function get_txt_title(){
-            
+        function read_issues(){
+            var url="https://api.github.com/repos/hellooozhangwen/hellooozhangwen.github.io/issues";
+            var all=$.get(url);
+            var arr=JSON.parse(all);
+            var path=arr[0]["html_url"];
+            var t=arr[0]["titile"];
+            var b=arr[0]["body"];
+            add_log(path,t+" : "+b);
         }
         
     </script>
@@ -111,7 +117,8 @@
     <input id="say"  type="text" style="width: 60%" placeholder="baby,say something to me" onkeypress="if(event.keyCode == 13){add_say()}" />
     <input type="button" onclick="read_mem()" value="加载留言" />
 </div>
-<div id="log" onload="read_mem()" ></div>
+<!--div id="log" onload="read_mem()" ></div-->
+<div id="log" onload="read_issues()" ></div>
 <iframe id="tit" src="some_log/1.html" style="width:70%;display:none" onload="get_iframe_title(this.id)"></iframe>
 <iframe id="txt" src="some_log/see sea.txt" style="width:70%;display:none" onload="get_iframe_title(this.id)" ></iframe> 
 <!--iframe id="test" src="some_log/see sea.txt" style="width:70%;display:none"  ></iframe--> 
