@@ -97,6 +97,7 @@
                       var path=all[i]["html_url"];
                       var t=all[i]["title"];
                       var b=all[i]["body"];
+                      var ctime=all[i]["created_at"];
                       console.log(path+"/n"+t+"/n"+b+"/n");
                       //获取留言
                       if(all[i]["comments"]){
@@ -105,7 +106,7 @@
                               console.log(data[1]["body"]);
                           })
                       }
-                      add_log(path,t);
+                      add_log(path,t+"\n"+citme);
                 }      
             });
         }
