@@ -54,7 +54,7 @@
        }
        
        function add_log(path,text){
-           var tag="<br/><hr/><a href="+path+" style='text-decoration: none'>日志：  "+text+"</a><hr/>"
+           var tag="<br/><hr style='height:3px;border:none;border-top:3px double red' /><a href="+path+" style='text-decoration: none'>日志：  "+text+"</a><hr/>"
            $("div#log").append(tag);
        }
        
@@ -106,7 +106,7 @@
                               console.log(data[1]["body"]);
                           })
                       }
-                      add_log(path,t+"\n"+citme);
+                      add_log(path,t+"\n"+ctime);
                 }      
             });
         }
