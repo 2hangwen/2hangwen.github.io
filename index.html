@@ -89,22 +89,24 @@
             var url="https://api.github.com/repos/hellooozhangwen/hellooozhangwen.github.io/issues";
             $.get(url,function(all){
                      //setTimeout("console.log('正在获取信息')",30000);
-                      console.log(all.length);
+                console.log(all.length);
                      //var str=all["responseText"];
                       //string to json
                      // var arr=JSON.parse(str);
-                      var path=all[0]["html_url"];
-                      var t=all[0]["title"];
-                      var b=all[0]["body"];
+                for (i=0;i<all.length;++i){
+                      var path=all[i]["html_url"];
+                      var t=all[i]["title"];
+                      var b=all[i]["body"];
                       console.log(path+"/n"+t+"/n"+b+"/n");
                       //获取留言
-                      if(all[0]["comments"]){
+                      if(all[i]["comments"]){
                           $.get(all[0]["comments_url"],function(data){
                               console.log(data[0]["body"]);
                               console.log(data[1]["body"]);
                           })
                       }
                       add_log(path,t+" : "+b);
+                }      
             });
         }
         
