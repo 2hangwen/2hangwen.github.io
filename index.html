@@ -61,6 +61,7 @@
        $(document).ready(function(){
            //add_log();
            pause_show_jpg();
+           read_issues();
        })
 
         function get_iframe_title(t) {
@@ -125,7 +126,7 @@
     <input type="button" onclick="read_mem()" value="加载留言" />
 </div>
 <!--div id="log" onload="read_mem()" ></div-->
-<div id="log" onload="read_issues()" ></div>
+<div id="log" onload="" ></div>
 <iframe id="tit" src="some_log/1.html" style="width:70%;display:none" onload="get_iframe_title(this.id)"></iframe>
 <iframe id="txt" src="some_log/see sea.txt" style="width:70%;display:none" onload="get_iframe_title(this.id)" ></iframe> 
 <!--iframe id="test" src="some_log/see sea.txt" style="width:70%;display:none"  ></iframe--> 
