@@ -115,12 +115,18 @@
             });
         }
         
+        var play=true;
         $(document).keyup(function(event){
                 switch(event.keyCode) {
                     case 27:
                    // alert("ESC");
-                    $("audio#mp3").eq(0).toggle(); //css("display","none"); 
-                    $("audio#mp3")[0].pause();
+                   $("audio#mp3").eq(0).toggle(); //css("display","none"); 
+                   if(play){
+                       $("audio#mp3")[0].pause();
+                    }else{
+                        $("audio#mp3")[0].play();
+                    }
+                    play=!play;
                     show("用ESC键隐藏了音乐<p>用ESC键显示音乐</p>");
                     break;
                     //case 96:
