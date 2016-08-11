@@ -5,7 +5,7 @@
     <title>hello zhangwen</title>
     <style>
        audio#mp3 {opacity:.3;position:fixed;top:95%;left:55%;}
-       audio#mp3 ~span[id $= help]{ display:none;position:fixed}
+       audio#mp3 ~span[id $= help]{ display:block;position:absolute}
        div#log a,div#log a p {background: linear-gradient(to right,#ffffff,blue);width:20%; }
     </style>
     <script  src="https://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
@@ -147,10 +147,10 @@
                 $('body').append(tag);
                 // }
                $("#show").toggle();  //显示id为show的标签内容
-                setTimeout("$('#show').toggle()",3000);
-                //3秒后再隐藏
-                 setTimeout('$("#show").remove()',3500);
-                 //3.5秒后移除
+                setTimeout("$('#show').toggle()",1000);
+                //1秒后再隐藏
+                 setTimeout('$("#show").remove()',1500);
+                 //1.5秒后移除
         }
         
     </script>
