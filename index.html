@@ -82,7 +82,7 @@
            var a=parseInt(Math.random()*100);
            var rgb=" background: linear-gradient(to right,#ffffff,rgb("+r+","+g+","+b+")) ";
            //添加hr标签，一条线
-           var line_hr="<hr width="+a+"% align=left style='background-color:rgb("+r+","+g+","+b+") ' />"
+           var line_hr="<hr width="+a+"% align=left style='background-color:rgb("+r+","+g+","+b+") ' //>"
            console.log(rgb);
            var tag="<br/><!--hr style='height:3px;border:none;border-top:3px double red' /--><a href="+path+" style='text-decoration: none;"+rgb+"' target='view_window' >日志：  "+text+"</a>"+line_hr;
            $("div#log").append(tag);
