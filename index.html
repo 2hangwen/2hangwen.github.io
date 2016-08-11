@@ -62,10 +62,10 @@
        }
        
        function add_log(path,text){
-           var r=Math.random()*2;
-           var g=Math.random()*255;
+           var r=parseInt(Math.random()*2);
+           var g=parseInt(Math.random()*255);
            var b=255;
-           var a=Math.random()*1;
+           var a=parseInt(Math.random()*1);
            var rgb=" background: linear-gradient(to right,#ffffff,rgba("+r+","+g+","+b+","+a+")) ";
            console.log(rgb);
            var tag="<br/><!--hr style='height:3px;border:none;border-top:3px double red' /--><a href="+path+" style='text-decoration: none"+rgb+"' target='view_window' >日志：  "+text+"</a><hr/>"
