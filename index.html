@@ -127,11 +127,12 @@
                    $("audio#mp3").eq(0).toggle(); //css("display","none"); 
                    if(play){
                        $("audio#mp3")[0].pause();
+                       show("用ESC键显示音乐");
                     }else{
                         $("audio#mp3")[0].play();
+                        show("用ESC键隐藏了音乐");
                     }
                     play=!play;
-                    show("用ESC键隐藏了音乐<p>用ESC键显示音乐</p>");
                     break;
                     //case 96:
                    //  alert("ESC");
