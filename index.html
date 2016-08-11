@@ -5,7 +5,8 @@
     <title>hello zhangwen</title>
     <style>
        audio#mp3 {opacity:.3;position:fixed;top:95%;left:55%;}
-       audio#mp3:hover ~span[id $= help]{ display:block;position:absolute;position:fixed;top:95%;left:55%;color:blue;}
+       audio#mp3 ~span[id $= help] {display:none }
+       audio#mp3:hover ~span[id $= help]{ display:block;position:absolute;position:fixed;top:95%;left:55%;color:blue;font-size:200%}
        div#log a,div#log a p {background: linear-gradient(to right,#ffffff,blue);width:20%; }
     </style>
     <script  src="https://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
@@ -167,7 +168,7 @@
     <audio id="mp3" controls="controls" autoplay="autoplay" loop=true  >
         <source src="music/包美圣 - 小茉莉.mp3" type="audio/mpeg">
     </audio>
-    <span id="mp3_help" style="display:none">可以用ESC键控制</span>
+    <span id="mp3_help" >可以用ESC键控制</span>
     
 <h1 style="text-align: center;color: orangered;display:none" >保持冷静，不断向前</h1>
 <div id="switch_jpg">
