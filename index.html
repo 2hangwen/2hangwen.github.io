@@ -7,7 +7,8 @@
        audio#mp3 {opacity:.3;position:fixed;top:95%;left:55%;}
        audio#mp3 ~span[id $= help] {display:none }
        audio#mp3:hover ~span[id $= help]{ display:block;position:absolute;position:fixed;top:95%;left:55%;color:orangered;font-size:150%}
-       div#log a,div#log a p {background: linear-gradient(to right,#ffffff,blue);width:20%; }
+       /*div#log a,div#log a p {background: linear-gradient(to right,#ffffff,blue);width:20%; }*/
+       div#log a,div#log a p {width:20%; }
     </style>
     <script  src="https://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -64,8 +65,9 @@
            var r=Math.random()*2;
            var g=Math.random()*255;
            var b=255;
-           var rgb="rgb("+r+","+g+","+b+")";
-           var tag="<br/><!--hr style='height:3px;border:none;border-top:3px double red' /--><a href="+path+" style='text-decoration: none' target='view_window' >日志：  "+text+"</a><hr/>"
+           var rgb=" background: linear-gradient(to right,#ffffff,rgb("+r+","+g+","+b+")) ";
+           console.log(rgb);
+           var tag="<br/><!--hr style='height:3px;border:none;border-top:3px double red' /--><a href="+path+" style='text-decoration: none"+rgb+"' target='view_window' >日志：  "+text+"</a><hr/>"
            $("div#log").append(tag);
        }
        
