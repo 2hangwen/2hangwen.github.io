@@ -68,7 +68,7 @@
            var a=parseInt(Math.random()*1);
            var rgb=" background: linear-gradient(to right,#ffffff,rgba("+r+","+g+","+b+","+a+")) ";
            console.log(rgb);
-           var tag="<br/><!--hr style='height:3px;border:none;border-top:3px double red' /--><a href="+path+" style='text-decoration: none"+rgb+"' target='view_window' >日志：  "+text+"</a><hr/>"
+           var tag="<br/><!--hr style='height:3px;border:none;border-top:3px double red' /--><a href="+path+" style='text-decoration: none;"+rgb+"' target='view_window' >日志：  "+text+"</a><hr/>"
            $("div#log").append(tag);
        }
        
