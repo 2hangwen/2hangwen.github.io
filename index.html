@@ -6,6 +6,7 @@
     <style>
        audio#mp3 {opacity:.3;position:fixed;top:95%;left:55%;}
        audio#mp3 ~span[id $= help] {display:none }
+       /* 给mp3播放器添加鼠标移   入  事件，即鼠标移入的时候兄弟标签span且id包含"help"字符就显示...   */
        audio#mp3:hover ~span[id $= help]{ display:block;position:absolute;position:fixed;top:95%;left:55%;color:orangered;font-size:150%}
        /*div#log a,div#log a p {background: linear-gradient(to right,#ffffff,blue);width:20%; }*/
        div#log a,div#log a p {width:20%; }
@@ -78,10 +79,12 @@
            var r=parseInt(Math.random()*2);
            var g=parseInt(Math.random()*255);
            var b=255;
-           var a=parseInt(Math.random()*1);
+           var a=parseInt(Math.random()*100);
            var rgb=" background: linear-gradient(to right,#ffffff,rgb("+r+","+g+","+b+")) ";
+           //a+="%";
+           var line_hr="<hr width="+a+"% align=left color=rgb("+r+","+g+","+b+") />"
            console.log(rgb);
-           var tag="<br/><!--hr style='height:3px;border:none;border-top:3px double red' /--><a href="+path+" style='text-decoration: none;"+rgb+"' target='view_window' >日志：  "+text+"</a><hr/>"
+           var tag="<br/><!--hr style='height:3px;border:none;border-top:3px double red' /--><a href="+path+" style='text-decoration: none;"+rgb+"' target='view_window' >日志：  "+text+"</a>"+line_hr;
            $("div#log").append(tag);
        }
        
