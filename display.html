@@ -26,6 +26,7 @@ function get_url(){
 //获取api数据
 function get_issues(www){
     $.get(www,function(data){
+       console.log(data);
        console.log(data[0]["title"]);
        console.log(data[0]["body"]);
        console.log(data[0]["comments"]);
