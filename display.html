@@ -11,7 +11,7 @@ div {background:rgb(0,150,255)}
 function get_url(){
   //获取当前url地址
   var url=window.location.href;
-  $("div#daily").append(url);
+  $("div#daily").append(url+"<br/>");
   //判断传过来的参数是否为空
   if(url.split("?")[1].split("=")[1].length){
       //拼接出issues的api地址
@@ -27,9 +27,9 @@ function get_url(){
 function get_issues(www){
     $.get(www,function(data){
        console.log(data);
-       console.log(data[0]["title"]);
-       console.log(data[0]["body"]);
-       console.log(data[0]["comments"]);
+       //console.log(data[0]["title"]);
+       //console.log(data[0]["body"]);
+       //console.log(data[0]["comments"]);
     })
 }
 
