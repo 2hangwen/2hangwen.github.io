@@ -45,7 +45,7 @@ function get_issues(www){
                                         // for(i in msg[i])$("div").append(i+"------"+msg[0][i]+"<br/>");
                                          $("div#daily").append("<br/><br/><br/>");   
                                         //msg[i]["title"].length?$("title").eq(0).html(data["title"]):console.log("标题获取没有数据");
-                                        msg[i]["body"].length?$("div#daily").append("<pre>"+msg[i]["body"]+"</pre>"):console.log("内容获取没有数据");
+                                        msg[i]["body"].length?$("div#daily").append("<pre><hr/>"+msg[i]["body"]+"<hr/></pre>"):console.log("内容获取没有数据");
                                   }});
                 
         }
