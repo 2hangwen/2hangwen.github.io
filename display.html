@@ -25,11 +25,18 @@ function get_url(){
 
 //获取api数据
 function get_issues(www){
+    console.log(www);
     $.get(www,function(data){
-       console.log(data);
+       //console.log(data);
        console.log(data["title"]);
+       data["title"]?$("title").eq(0).html(data["title"]):;
        console.log(data["body"]);
+       data["body"]?$("div#daily").append(data["body"]);;
        console.log(data["comments"]);
+       //获取留言地址为https://api.github.com/repos/hellooozhangwen/hellooozhangwen.github.io/issues/1/comments
+       if(data["comments"]){
+              get_issues(www+"comments");
+       }
     })
 }
 
