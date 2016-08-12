@@ -38,11 +38,11 @@ function get_issues(www){
        if(data["comments"] == "number"  &&  data["comments"] > 0){
               $.get(www+"comments",function(msg){
                 console.log(msg.length);
-                console.log(msg[0]["title"]);
+                console.log(msg[0][0]["title"]);
                 //data["title"].length?$("title").eq(0).html(data["title"]):console.log("标题获取没有数据");
-                console.log(msg[0]["body"]);
+                console.log(msg[0][0]["body"]);
                // data["body"].length?$("div#daily").append(data["body"]):console.log("内容获取没有数据");
-                console.log(msg[0]["comments"]);
+                console.log(msg[0][0]["comments"]);
                //$("div#daily").append("<hr/>"+data["comments"]+typeof(data["comments"])+"<hr/>")
               });
        }
