@@ -24,7 +24,6 @@ function get_url(){
 }
 
 //获取api数据
-var fuck;
 function get_issues(www){
     console.log(www);
     $.get(www,function(data){
@@ -38,7 +37,8 @@ function get_issues(www){
        //获取留言地址为https://api.github.com/repos/hellooozhangwen/hellooozhangwen.github.io/issues/1/comments
        if(data["comments"] == "number"  &&  data["comments"] > 0){
               $.get(www+"comments",function(msg){
-                fuck=msg;
+                for(i in msg)console.log(i+"------"+msg[i]);
+                /*
                 console.log(msg.length);
                 console.log(msg);
                 //data["title"].length?$("title").eq(0).html(data["title"]):console.log("标题获取没有数据");
@@ -46,6 +46,7 @@ function get_issues(www){
                // data["body"].length?$("div#daily").append(data["body"]):console.log("内容获取没有数据");
                 console.log(msg[0][0]["comments"]);
                //$("div#daily").append("<hr/>"+data["comments"]+typeof(data["comments"])+"<hr/>")
+               */
               });
        }
     })
