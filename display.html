@@ -7,11 +7,16 @@ div {background:blue}
 <title>良记录</title>
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script>
-  var get_url=window.location.href;
-  $("div#daily").append(get_url);
-  var issues_api_url="https://api.github.com/repos/hellooozhangwen/hellooozhangwen.github.io/issues/"+get_url.split("?")[1].split("=")[1];
+function get_url(){
+  var url=window.location.href;
+  $("div#daily").append(url);
+  var issues_api_url="https://api.github.com/repos/hellooozhangwen/hellooozhangwen.github.io/issues/"+url.split("?")[1].split("=")[1];
   $("div#daily").append(issues_api_url);
-  
+}
+
+$(function(){
+   get_url();
+}
 </script>
 </head>
 
