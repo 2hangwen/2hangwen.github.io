@@ -28,17 +28,18 @@ function get_issues(www){
     console.log(www);
     $.get(www,function(data){
        //console.log(data);
-       console.log(data["title"]);
+       //console.log(data["title"]);
        data["title"].length?$("title").eq(0).html(data["title"]):console.log("标题获取没有数据");
-       console.log(data["body"]);
+       //console.log(data["body"]);
        data["body"].length?$("div#daily").append(data["body"]):console.log("内容获取没有数据");
-       console.log(data["comments"]);
-       $("div#daily").append("<hr/>"+data["comments"]+typeof(data["comments"])+"<hr/>");
+       //console.log(data["comments"]);
+       // $("div#daily").append("<hr/>"+data["comments"]+typeof(data["comments"])+"<hr/>");
        //获取留言地址为https://api.github.com/repos/hellooozhangwen/hellooozhangwen.github.io/issues/1/comments
        if(data["comments"] > 0){
                            
-                    //console.log(data["comments_url"]);
+                    //ajax留言所有信息
                      $.get(data["comments_url"],function(msg){
+                                  //遍历留言内容
                                   for(i=0;i<data["comments"];++i){
                                         // for(i in msg[i])$("div").append(i+"------"+msg[0][i]+"<br/>");
                                          $("div#daily").append("<hr/><hr/><br/>");   
