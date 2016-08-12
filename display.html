@@ -27,9 +27,9 @@ function get_url(){
 function get_issues(www){
     $.get(www,function(data){
        console.log(data);
-       //console.log(data[0]["title"]);
-       //console.log(data[0]["body"]);
-       //console.log(data[0]["comments"]);
+       console.log(data["title"]);
+       console.log(data["body"]);
+       console.log(data["comments"]);
     })
 }
 
