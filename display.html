@@ -34,27 +34,21 @@ function get_issues(www){
        data["body"].length?$("div#daily").append(data["body"]):console.log("内容获取没有数据");
        console.log(data["comments"]);
        $("div#daily").append("<hr/>"+data["comments"]+typeof(data["comments"])+"<hr/>");
-       var comment_url=data["comments_url"];
-       //var count=data["comments"];
-       console.log(comment_url+"*******");
        //获取留言地址为https://api.github.com/repos/hellooozhangwen/hellooozhangwen.github.io/issues/1/comments
        if(data["comments"] > 0){
-              console.log(data["comments_url"]);
-              $.get(data["comments_url"],function(msg){
-                for(i in msg[0]){$("div").append(i+"------"+msg[0][i]+"<br/>")};
-                /*
-                console.log(msg.length);
-                console.log(msg);
-                //data["title"].length?$("title").eq(0).html(data["title"]):console.log("标题获取没有数据");
-                console.log(msg[0][0]["body"]);
-               // data["body"].length?$("div#daily").append(data["body"]):console.log("内容获取没有数据");
-                console.log(msg[0][0]["comments"]);
-               //$("div#daily").append("<hr/>"+data["comments"]+typeof(data["comments"])+"<hr/>")
-               */
-              });
-       }
-    })
-}
+                           
+                    //console.log(data["comments_url"]);
+                     $.get(data["comments_url"],function(msg){
+                                  for(i=0;i<data["comments"];++i){
+                                        // for(i in msg[i])$("div").append(i+"------"+msg[0][i]+"<br/>");
+                                         $("div#daily").append("<hr/><hr/><br/>");   
+                                        //msg[i]["title"].length?$("title").eq(0).html(data["title"]):console.log("标题获取没有数据");
+                                        msg[i]["body"].length?$("div#daily").append(msg[i]["body"]):console.log("内容获取没有数据");
+                                  }});
+                
+        }
+      })
+ }
 
 $(function(){
    get_url();
