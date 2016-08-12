@@ -19,6 +19,7 @@ function get_url(){
        var issues_api_url="https://api.github.com/repos/hellooozhangwen/hellooozhangwen.github.io/issues/"+url.split("?")[1].split("=")[1];
      //  $("div#daily").append(issues_api_url);
        get_issues(issues_api_url);
+       setTimeout("random_color()",3000);
   }else{
        $("div#daily").append("什么也没有");
   }
@@ -72,7 +73,7 @@ $(function(){
 </head>
 
 <body>
-<div id="daily" onload="random_color()" >
+<div id="daily"  >
 </div>
 </body>
 
