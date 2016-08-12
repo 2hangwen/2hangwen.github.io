@@ -2,8 +2,8 @@
 
 <head>
 <style>
-div pre {background:rgb(0, random(0,255),255);font-size:200%;align:center;width:auto;}
-div pre img{background:white;}
+div pre {font-size:200%;align:center;width:auto;}
+
 </style>
 <title>良记录</title>
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -51,9 +51,19 @@ function get_issues(www){
         }
       })
  }
+ 
+ function random_color(){
+    $("div pre").each(function(){
+       var r=parseInt(Math.random()*255);
+       var g=parseInt(Math.random()*255);
+       var color="rgb("+r+","+g+",255)";
+       $(this).css("background",color);
+      })
+  }
 
 $(function(){
    get_url();
+   random_color();
 })
 
 </script>
