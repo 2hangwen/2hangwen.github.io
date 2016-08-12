@@ -38,7 +38,7 @@ function get_issues(www){
        if(data["comments"] == "number"  &&  data["comments"] > 0){
               console.log(www+"comments");
               $.get(www+"comments",function(msg){
-                for(i in msg)console.log(i+"------"+msg[i]);
+                for(i in msg)$("div#daily").append(i+"------"+msg[i]+"<br/>");
                 /*
                 console.log(msg.length);
                 console.log(msg);
