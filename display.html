@@ -35,9 +35,12 @@ function get_issues(www){
        console.log(data["comments"]);
        $("div#daily").append("<hr/>"+data["comments"]+typeof(data["comments"])+"<hr/>")
        //获取留言地址为https://api.github.com/repos/hellooozhangwen/hellooozhangwen.github.io/issues/1/comments
-     //  if(data["comments"] > 0){
-      //        get_issues(www+"comments");
-      // }
+       if(data["comments"] == "number"  &&  data["comments"] > 0){
+              data["title"]="";
+              data["body"]="";
+              data["comments"]="";
+              get_issues(www+"comments");
+       }
     })
 }
 
