@@ -56,8 +56,10 @@ function get_issues(www){
     $("div pre").each(function(){
        var r=parseInt(Math.random()*255);
        var g=parseInt(Math.random()*255);
-       var color="background:rgb("+r+","+g+",255)";
-       $(this).css(color);
+       var color="rgb("+r+","+g+",255)";
+      // $("div pre").css("background","rgb(2,3,255)")
+       console.log(color);
+       $(this).css("background",color);
       })
   }
 
