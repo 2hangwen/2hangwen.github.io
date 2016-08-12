@@ -34,6 +34,7 @@ function get_issues(www){
        data["body"].length?$("div#daily").append(data["body"]):console.log("内容获取没有数据");
        console.log(data["comments"]);
        $("div#daily").append("<hr/>"+data["comments"]+typeof(data["comments"])+"<hr/>")
+       console.log(data["comments_url"]+"*******");
        //获取留言地址为https://api.github.com/repos/hellooozhangwen/hellooozhangwen.github.io/issues/1/comments
        if(data["comments"] == "number"  &&  data["comments"] > 0){
               console.log(data["comments_url"]);
