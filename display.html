@@ -29,9 +29,9 @@ function get_issues(www){
     $.get(www,function(data){
        //console.log(data);
        console.log(data["title"]);
-       data["title"]?$("title").eq(0).html(data["title"]):;
+       data["title"].length?$("title").eq(0).html(data["title"]):console.log("标题获取没有数据");
        console.log(data["body"]);
-       data["body"]?$("div#daily").append(data["body"]);;
+       data["body"].length?$("div#daily").append(data["body"]);console.log("内容获取没有数据");
        console.log(data["comments"]);
        //获取留言地址为https://api.github.com/repos/hellooozhangwen/hellooozhangwen.github.io/issues/1/comments
        if(data["comments"]){
