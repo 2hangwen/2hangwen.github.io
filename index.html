@@ -2,7 +2,7 @@
 
 <head>
 
-    <title>hello zhangwen</title>
+    <title>万恶之地</title>
     <style>
        audio#mp3 {opacity:.3;position:fixed;top:95%;left:55%;}
        audio#mp3 ~span[id $= help] {display:none }
@@ -135,7 +135,9 @@
                 //迭代ajax返回的数据     
                 for (i=0;i<all.length;++i){
                       //各条issues的url地址	
-                      var path=all[i]["html_url"];
+                      //var path=all[i]["html_url"];
+                      //各条issues的序号
+                      var number=all[i]["number"];
                       //各条issues的标题 
                       var t=all[i]["title"];
                       //各条issues的内容
@@ -151,6 +153,7 @@
                               console.log(data[1]["body"]);
                           })
                       }
+                      var path="display.html?num="+number;
                       //&nbsp为空格，&gt为 >
                       add_log(path,t+" &nbsp&nbsp&nbsp&nbsp&gt&gt&gt  "+ctime);
                 }      
