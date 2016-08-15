@@ -14,6 +14,7 @@
     </style>
     <script  src="https://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="act_for_css.js"></script>
     <script>
         //设置show_jpg对象的变量，我称之为静态变量
         show_jpg.i=-1;
@@ -96,6 +97,8 @@
            read_issues();
            //把alert（）函数注销
            window.alert = function(){};
+            add_div_for_body(155);
+            setInterval(play_for_css,300);
        })
        
         //获取加载了iframe里的内容  
