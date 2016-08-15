@@ -38,6 +38,6 @@
        $("div#menu").click(function(){$("div#ds-reset").toggle()});
        
        $("style").eq(0).append("div#menu{width: 100px;height: 100px;background:skyblue;border-radius: 100px;}");
-       $("div#menu").append("<div id=fuck_life ></div>");
+       $("body").prepend("<div id=fuck_life ></div>");
        $("div#fuck_life").click(function(){$("div#log").toggle()});
    }
