@@ -39,7 +39,7 @@
        $("div#menu span div#ds").click(function(){$("div#ds-reset").toggle()});
        
        $("style").eq(0).append("div#menu span div#life{width: 100px;height: 100px;background: skyblue;border-radius: 100px;}");
-       $("div#menu span").append("<div id=life > </div> "); 
+       $("div#menu").append("<span><div id=life > </div></span> "); 
       // $("<div id=fuck_life ></div>").insertAfter("div#menu div#ds");
        $("div#menu span div#life").click(function(){$("div#log").toggle()});
    }
