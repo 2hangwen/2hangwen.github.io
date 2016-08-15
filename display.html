@@ -76,12 +76,12 @@ $(function(){
  function add_div_for_body(n){
         for(i=0;i<n;++i){
             console.log(i);
-            $("div#css").append("<div id=css"+i+" ></div>");
+            $("div#line").append("<div id=css"+i+" ></div>");
             var r=parseInt(Math.random()*255);
             var g=parseInt(Math.random()*255);
             var b=parseInt(Math.random()*255);
-            var pos_width=parseInt(Math.random()*20)+"%";
-            var pos_heigth=parseInt(Math.random()*90)+"%";
+            var pos_width=parseInt(Math.random()*90)+"%";
+            var pos_heigth=parseInt(Math.random()*20)+"%";
           //  width: 100px;height: 100px;background: orange;border-radius: 100px;
             $("body div#css"+i).css("border-radius","100px");
             $("body div#css"+i).css("width","1px");
@@ -110,7 +110,7 @@ $(function(){
 </head>
 
 <body>
-<div id=css >下雨</div>  
+<div id=line >下雨</div>  
 <div id="daily"  ></div>
 </body>
 
