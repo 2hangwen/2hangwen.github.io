@@ -1,4 +1,5 @@
   function add_div_for_body(n){
+        create_menu_bycss();
         var direction=["border-top-color","border-right-color","border-bottom-color","border-left-color"];
         for(i=0;i<n;++i){
             console.log(i);
