@@ -34,12 +34,12 @@
     }
  
    function create_menu_bycss(){
-       $("style").eq(0).append("div#menu div#ds{width: 100px;height: 100px;background: orange;border-radius: 100px;}");
-       $("div#menu").append("<div id=ds ></div>");
-       $("div#menu div#ds").click(function(){$("div#ds-reset").toggle()});
+      // $("style").eq(0).append("div#menu div#ds{width: 100px;height: 100px;background: orange;border-radius: 100px;}");
+      // $("div#menu").append("<div id=ds ></div>");
+      // $("div#menu div#ds").click(function(){$("div#ds-reset").toggle()});
        
-       $("style").eq(0).append("div#menu div#fuck_lift{width: 100px;height: 100px;background:skyblue;border-radius: 100px;}");
-      // $("body").prepend("<div id=fuck_life ></div>"); 
-       $("<div id=fuck_life ></div>").insertAfter("div#menu div#ds");
-       $("div#menu div#fuck_life").click(function(){$("div#log").toggle()});
+       $("style").eq(0).append("div#menu div#lift{width: 100px;height: 100px;background:skyblue;border-radius: 100px;}");
+       $("div#menu").prepend("<div id=life ></div>"); 
+      // $("<div id=fuck_life ></div>").insertAfter("div#menu div#ds");
+       $("div#menu div#life").click(function(){$("div#log").toggle()});
    }
