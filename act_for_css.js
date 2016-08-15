@@ -25,9 +25,9 @@
 
     function  play_for_css(){
         $("div[id*=css]").each(function () {
-            var pos_width = parseInt(Math.random() * 90) + "%";
-            var pos_heigth = parseInt(Math.random() * 90) + "%";
-             $(this).css("top", pos_width);
-             $(this).css("left", pos_heigth);
+            var pos_top = parseInt(Math.random() * 100) + "%";
+            var pos_left = parseInt(Math.random() * 100) + "%";
+             $(this).css("top", pos_top);
+             $(this).css("left", pos_left);
         });
     }
