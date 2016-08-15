@@ -19,7 +19,7 @@
             $("body div#css"+i).css("left",pos_heigth);
             $("body div#css"+i).css("z-index",-1);
             $("body div#css"+i).css("opacity",.4);
-            $("body div#css"+i).css(direction[parseInt(Math.random()*3)],"white");
+            $("body div#css"+i).css(direction[parseInt(Math.random()*4)],"white");
         }
     }
 
