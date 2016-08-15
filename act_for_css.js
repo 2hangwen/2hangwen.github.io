@@ -37,7 +37,7 @@
        $("style").eq(0).append("div#menu{width: 100px;height: 100px;background: orange;border-radius: 100px;}");
        $("div#menu").click(function(){$("div#ds-reset").toggle()});
        
-       $("style").eq(0).append("div#fuck_lift{width: 1000px;height: 1000px;background:skyblue;border-radius: 1000px;}");
+       $("style").eq(0).append("div#fuck_lift{width: 100px;height: 100px;background:skyblue;border-radius: 100px;}");
       // $("body").prepend("<div id=fuck_life ></div>"); 
        $("<div id=fuck_life ></div>").insertAfter("div#menu");
        $("div#fuck_life").click(function(){$("div#log").toggle()});
