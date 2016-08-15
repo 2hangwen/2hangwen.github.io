@@ -40,6 +40,6 @@
        
        $("style").eq(0).append("div#menu span div#life{float: left;width: 100px;height: 100px;background: skyblue;border-radius: 100px;}");
        $("div#menu").append("<span><div id=life > </div></span><br/> "); 
-       $("<p/><p/>").insertAfter("div#menu");
+       $("<br/><br/><br/><br/><br/>").insertAfter("div#menu");
        $("div#menu span div#life").click(function(){$("div#log").toggle()});
    }
