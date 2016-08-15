@@ -31,3 +31,8 @@
              $(this).css("left", pos_left);
         });
     }
+ 
+   function create_menu_bycss(){
+       $("style").eq(0).append("div#menu{width: 100px;height: 100px;background: orange;border-radius: 100px;}");
+       $("div#menu").click(function(){$("div#ds-reset").toggle()});
+   }
