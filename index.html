@@ -87,7 +87,11 @@
            var line_hr="<hr width="+a+"% align=left style='background-color:rgb("+r+","+g+","+b+") ' //>"
            console.log(rgb);
            var tag="<br/><!--hr style='height:3px;border:none;border-top:3px double red' /--><a href="+path+" style='text-decoration: none;"+rgb+"' target='view_window' >日志：  "+text+"</a>"+line_hr;
-           $("div#log").append(tag);
+           if(tag.indexOf("some_log")){
+           	$("div#log").append(tag);
+           }else{
+                $("div#issues").append(tag);
+           }
        }
        
        $(document).ready(function(){
@@ -230,6 +234,7 @@
 </div-->
 <!--div id="log" onload="read_mem()" ></div-->
 <div id="log" onload="" ></div>
+<div id="issues" ></div>
 <iframe id="tit" src="some_log/1.html" style="width:70%;display:none" onload="get_iframe_title(this.id)"></iframe>
 <iframe id="txt" src="some_log/see sea.txt" style="width:70%;display:none" onload="get_iframe_title(this.id)" ></iframe> 
 <!--iframe id="test" src="some_log/see sea.txt" style="width:70%;display:none"  ></iframe--> 
