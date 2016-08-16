@@ -43,7 +43,7 @@
        //$("<br/><br/><br/><br/><br/>").insertAfter("div#menu");
        $("div#menu span div#life").click(function(){$("div#log").toggle()});
        
-        $("style").eq(0).append("div#menu span div#gongfu{float: left;width: 100px;height: 100px;background: skyblue;border-radius: 100px;}");
+        $("style").eq(0).append("div#menu span div#gongfu{float: left;width: 100px;height: 100px;background: darkturquoise;border-radius: 100px;}");
        $("div#menu").append("<span><div id=gongfu ><div style=text-align:center;line-height:100px >拔剑击柱</div> </div></span>"); 
        $("<br/><br/><br/><br/><br/>").insertAfter("div#menu");
        $("div#menu span div#gongfu").click(function(){$("div#issues").toggle()});
