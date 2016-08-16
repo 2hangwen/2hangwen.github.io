@@ -87,6 +87,7 @@
            var line_hr="<hr width="+a+"% align=left style='background-color:rgb("+r+","+g+","+b+") ' //>"
            console.log(rgb);
            var tag="<br/><!--hr style='height:3px;border:none;border-top:3px double red' /--><a href="+path+" style='text-decoration: none;"+rgb+"' target='view_window' >日志：  "+text+"</a>"+line_hr;
+           console.log(tag.indexOf("some_log"));
            if(tag.indexOf("some_log")){
            	$("div#log").append(tag);
            }else{
