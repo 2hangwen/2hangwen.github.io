@@ -35,11 +35,11 @@
  
    function create_menu_bycss(){
        $("style").eq(0).append("div#menu span div#ds{float: left;width: 100px;height: 100px;background: orange;border-radius: 100px;}");
-       $("div#menu").append("<span> <div id=ds ><div style=text-align:center;line-height:50px >留言</div> </div></span>");
+       $("div#menu").append("<span> <div id=ds ><div style=text-align:center;line-height:100px >给我留言</div> </div></span>");
        $("div#menu span div#ds").click(function(){$("div#ds-reset").toggle()});
        
        $("style").eq(0).append("div#menu span div#life{float: left;width: 100px;height: 100px;background: skyblue;border-radius: 100px;}");
-       $("div#menu").append("<span><div id=life ><b style=position: relative;top:50%;left:50% > 日志</b> </div></span><br/> "); 
+       $("div#menu").append("<span><div id=life ><div style=text-align:center;line-height:100px >风言风语</div> </div></span><br/> "); 
        $("<br/><br/><br/><br/><br/>").insertAfter("div#menu");
        $("div#menu span div#life").click(function(){$("div#log").toggle()});
    }
