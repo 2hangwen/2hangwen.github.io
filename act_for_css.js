@@ -35,7 +35,7 @@
  
    function create_menu_bycss(){
        $("style").eq(0).append("div#menu span div#ds{float: left;width: 100px;height: 100px;background: orange;border-radius: 100px;}");
-       $("div#menu").append("<span> <div id=ds ><center> 留言</center> </div></span>");
+       $("div#menu").append("<span> <div id=ds ><center> <p>留言0<p>留言1<p>留言2<p>留言3<p>留言4</center> </div></span>");
        $("div#menu span div#ds").click(function(){$("div#ds-reset").toggle()});
        
        $("style").eq(0).append("div#menu span div#life{float: left;width: 100px;height: 100px;background: skyblue;border-radius: 100px;}");
