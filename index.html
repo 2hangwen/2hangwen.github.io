@@ -6,7 +6,7 @@
     <style>
        body{position:absolute;top:0;left:20%;}
        iframe#music163 {opacity:.5;position:fixed;top:90%;left:20%;z-index:999;}
-       iframe#music163:hover::after{content:attr(data-help);display:block;border:2px solid red;border-radius:0px;text-align:center;line-height:100px; }
+       iframe#music163:hover::after{content:attr(data-help);display:block;font-size:200%;border:2px solid red;border-radius:0px;text-align:center;line-height:100px; }
        audio#mp3 {opacity:.3;position:fixed;top:95%;left:55%;z-index:999;}
        audio#mp3 ~span[id $= help] {display:none }
        /* 给mp3播放器添加鼠标移   入  事件，即鼠标移入的时候兄弟标签span且id包含"help"字符就显示...   */
@@ -17,6 +17,7 @@
     <script  src="https://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="act_for_css.js"></script>
+    <script src="link_url.js"></script>
     <script>
         //设置show_jpg对象的变量，我称之为静态变量
         show_jpg.i=-1;
