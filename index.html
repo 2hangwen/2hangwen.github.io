@@ -213,11 +213,13 @@
                 $('body').append(tag);
                 // }
                $("#show").toggle();  //显示id为show的标签内容
-               setTimeout("$('#show').toggle()",500);
-                //0.5秒后再隐藏
                if(n){
+               	  setTimeout("$('#show').toggle()",n);
+                  //n秒后再隐藏
                	  setTimeout("$('#show').remove()",n);
                }else{
+               	 setTimeout("$('#show').toggle()",500);
+                //0.5秒后再隐藏
                   setTimeout('$("#show").remove()',500);
                  //0.5秒后移除
                }
