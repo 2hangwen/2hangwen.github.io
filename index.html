@@ -173,32 +173,33 @@
             });
         }
         
-        var play;
+        var play=true;
         $(document).keyup(function(event){
         	//定义一个全局键盘事件
                 switch(event.keyCode) {
                     case 27:
                    // 这里是按了"ESC"后隐藏或显示mp3播放器
                    $("iframe#music163").toggle();
-                   play=$("iframe#music163").prop("src");
-                  
+                   show($("iframe#music163").prop("data-help"));
+                  /*
                    //自带播放器的暂停与播放功能
                    $("audio#mp3").eq(0).toggle(); //css("display","none"); 
                    if(play){
                    	//暂停音乐，并跳出提醒
                       // $("audio#mp3")[0].pause();
-                      $("iframe#music163").prop("src","");
+                    
                        show("可以用ESC键显示音乐");
                     }else{
                     	//播放音乐，并跳出提醒
                        // $("audio#mp3")[0].play();
-                       $("iframe#music163").prop("src",play);
+                   
                         show("可以用ESC键隐藏音乐");
                     }
                    
                     //取反
                     play=!play;
                     break;
+                    */
                     //case 96:
                    //  alert("ESC");
                 }
