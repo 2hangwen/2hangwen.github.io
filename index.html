@@ -173,27 +173,29 @@
             });
         }
         
-        var play=true;
+        var play;
         $(document).keyup(function(event){
         	//定义一个全局键盘事件
                 switch(event.keyCode) {
                     case 27:
                    // 这里是按了"ESC"后隐藏或显示mp3播放器
                    $("iframe#music163").toggle();
-                   show($("iframe#music163").attr("data-help"));
-                   /*
+                   play=$("iframe#music163").prop("src");
+                  
                    //自带播放器的暂停与播放功能
                    $("audio#mp3").eq(0).toggle(); //css("display","none"); 
                    if(play){
                    	//暂停音乐，并跳出提醒
-                       $("audio#mp3")[0].pause();
+                      // $("audio#mp3")[0].pause();
+                      $("iframe#music163").prop("src","");
                        show("可以用ESC键显示音乐");
                     }else{
                     	//播放音乐，并跳出提醒
-                        $("audio#mp3")[0].play();
+                       // $("audio#mp3")[0].play();
+                       $("iframe#music163").prop("src",play);
                         show("可以用ESC键隐藏音乐");
                     }
-                    */
+                   
                     //取反
                     play=!play;
                     break;
@@ -250,7 +252,7 @@
 <iframe id="txt" src="some_log/see sea.txt" style="width:70%;display:none" onload="get_iframe_title(this.id)" ></iframe> 
 <!--iframe id="test" src="some_log/see sea.txt" style="width:70%;display:none"  > 28625063</iframe--> 
 
- <iframe id="music163" data-help="可以用ESC键控制" frameborder="no" border="0" marginwidth="0" marginheight="0" width=630 height=43 src="//music.163.com/outchain/player?type=2&auto=1&height=66&id=32102411"></iframe>
+ <iframe id="music163" data-help="可以用ESC键控制" frameborder="no" border="0" marginwidth="0" marginheight="0" width=630 height=86 src="//music.163.com/outchain/player?type=2&auto=1&height=66&id=32102411"></iframe>
 
 <section id="comments" >
    <!-- 多说评论框 start -->
