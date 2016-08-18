@@ -211,12 +211,12 @@
                 msg="<h1 style='color: #0000cc;text-align: center;position: absolute;top: 45%;left: 30%' >"+msg+"</h1>";
                 var tag = '<div id=show style="height: 100%;width: 100%;text-align: center;background-color: orangered;position: fixed;top: 0%;left: 0%;display: none;opacity: .7;z-index:999" >' + msg + "</div>";
                 $('body').append(tag);
-                $("body div#show").append("<p style='align:center;color:white;width:15%;height:15%' ></p>");
+                $("body div#show").append("<p style='align:center;color:white;font-size:200%;width:15%;height:15%' ></p>");
                 // }
                $("#show").toggle();  //显示id为show的标签内容
                if(n){
                	  setTimeout("$('#show').toggle()",n);
-               	  setInterval(function(){n=n-1000;console.log(n);$('div#show p').html(n/1000)},1000);
+               	  var id=setInterval(function(){n=n-1000;console.log(n);$('div#show p').html(n/1000);if(!n){clearTimeout(id)}},1000);
                   //n秒后再隐藏
                	  setTimeout("$('#show').remove()",n);
                }else{
