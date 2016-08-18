@@ -206,17 +206,22 @@
         });
         
         //提醒信息
-        function show(msg){
+        function show(msg,n){
                 //  if(!$("#show").length) {
                 msg="<h1 style='color: #0000cc;text-align: center;position: absolute;top: 45%;left: 30%' >"+msg+"</h1>";
                 var tag = '<div id=show style="height: 100%;width: 100%;text-align: center;background-color: orangered;position: fixed;top: 0%;left: 0%;display: none;opacity: .7;z-index:999" >' + msg + "</div>";
                 $('body').append(tag);
                 // }
                $("#show").toggle();  //显示id为show的标签内容
-                setTimeout("$('#show').toggle()",500);
+               setTimeout("$('#show').toggle()",500);
                 //0.5秒后再隐藏
-                 setTimeout('$("#show").remove()',500);
+               if(n){
+               	  setTimeout("$('#show').remove()",n);
+               }else{
+                  setTimeout('$("#show").remove()',500);
                  //0.5秒后移除
+               }
+                 
         }
         
     </script>
