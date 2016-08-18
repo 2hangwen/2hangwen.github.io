@@ -5,3 +5,5 @@ function create_link_bycss(){
        $("div#menu span div#link_url").click(function(){show(link)});
       // $("div#menu span div#link_url").append(link);
 }
+
+$(function(){ create_link_bycss()})
