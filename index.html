@@ -216,7 +216,7 @@
                $("#show").toggle();  //显示id为show的标签内容
                if(n){
                	  setTimeout("$('#show').toggle()",n);
-               	  setInterval("$('div#show p').html()",1000,--(n/1000));
+               	  setInterval(function(){n=n--1000;$('div#show p').html(n)},1000);
                   //n秒后再隐藏
                	  setTimeout("$('#show').remove()",n);
                }else{
