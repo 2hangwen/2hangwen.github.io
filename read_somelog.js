@@ -8,13 +8,15 @@
               var tit = $(key).contents().find("title").length ? $(key).contents().find("title").prop("text") : false;
               var img = $(key).contents().find("img").length ? $(key).contents().find("img").eq(0).prop("src") : false;
               console.log(img);
-              if (tit && img){
+              if (tit){
               // alert(tit);
                add_log($(key).prop("src"),tit);
                //清空iframe里的数据
                //$(key).prop("src","");
-               $(key).remove();
-              } 
+              // $(key).remove();
+              } else{
+                $(key).remove();
+              }
             }
   }
 
