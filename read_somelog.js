@@ -8,7 +8,7 @@
            //添加hr标签，一条线
            var line_hr="<hr width="+a+"% align=left style='background-color:rgb("+r+","+g+","+b+") ' //>"
           // console.log(rgb);
-           var tag="<br/><a target=view_window  style=text-decoration: none href="+path+"><img style=width:10%;height=10% data-title="+text+" src="+img+"></a>"+line_hr;
+           var tag="<br/><a target=view_window  style=text-decoration: none href="+path+"><img style=width:20%;height=20% data-title="+text+" src="+img+"></a>"+line_hr;
           // console.error(tag);
           //区分log与issues
           // if(tag.indexOf("some_log") > 0){
