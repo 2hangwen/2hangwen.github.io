@@ -3,10 +3,10 @@
             var key = "iframe#" + t;
             var tit="";
             var img="";
-            console.log($(key).contents().find("title").prop("text"));
-            if($(key).contents().find("title").prop("text").indexOf("Page not")){
-             // $(key).remove();
-             return 0;
+            //console.log($(key).contents().find("title").prop("text"));
+            if($("iframe#23").contents().find("h1").eq(0).text() == "404" ){
+               $(key).remove();
+               return 0;
             }else{
              //获取iframe的document,查找title标签并获取内容，这里用了？：;	
               var tit = $(key).contents().find("title").length ? $(key).contents().find("title").prop("text") : false;
