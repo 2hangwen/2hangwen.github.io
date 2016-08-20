@@ -3,7 +3,7 @@
             var key = "iframe#" + t;
             var tit="";
             var img="";
-            if($(key).length){
+            if(!$(key).contents().find("title").prop("text").indexOf("not")){
              //获取iframe的document,查找title标签并获取内容，这里用了？：;	
               var tit = $(key).contents().find("title").length ? $(key).contents().find("title").prop("text") : false;
               var img = $(key).contents().find("img").length ? $(key).contents().find("img").eq(0).prop("src") : false;
@@ -14,19 +14,24 @@
                //清空iframe里的数据
                //$(key).prop("src","");
               // $(key).remove();
-              } else{
+              }
+            } else{
                 $(key).remove();
               }
-            }
   }
 
 
 function read_log(){
   for(i=1;i<30;++i){
      var filename=i+".html";
-     var tag="<iframe id=loghtml src=some_log/"+filename+" onload=get_iframe(this.id) ><iframe>";
+     var tag="<iframe id="+filename+" src=some_log/"+filename+" onload=get_iframe(this.id) ><iframe>";
      console.log(tag);
     // $("body").append(tag);
      $(tag).insertBefore("iframe#music163");
   }
 } 
+
+$(function(){
+  read_log();
+  
+ })
