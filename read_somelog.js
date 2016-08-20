@@ -1,4 +1,4 @@
-       function add_loghtml(path,text,img="/2012.jpg"){
+       function add_loghtml(path,text,img){
        	  //产生随机浮点，然后转为整形，为rgb（不是rgba）取色做准备
            var r=parseInt(Math.random()*2);
            var g=parseInt(Math.random()*255);
@@ -31,7 +31,7 @@
             }else{
              //获取iframe的document,查找title标签并获取内容，这里用了？：;	
               var tit = $(key).contents().find("title").length ? $(key).contents().find("title").prop("text") : false;
-              var img = $(key).contents().find("img").length ? $(key).contents().find("img").eq(0).prop("src") : false;
+              var img = $(key).contents().find("img").length ? $(key).contents().find("img").eq(0).prop("src") : "2012.jpg";
               console.log(img);
              // if (tit){
               // alert(tit);
@@ -47,7 +47,7 @@
 function read_log(){
   for(i=1;i<30;++i){
      var filename=i+".html";
-     var tag="<iframe id="+i+" src=some_log/"+filename+" onload=get_iframe(this.id) ><iframe>";
+     var tag="<iframe id="+i+" src=some_log/"+filename+" onload=get_iframe(this.id)  style=display:none ><iframe>";
      console.log(tag);
     // $("body").append(tag);
      $(tag).insertBefore("iframe#music163");
