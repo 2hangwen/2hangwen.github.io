@@ -3,7 +3,8 @@
             var key = "iframe#" + t;
             var tit="";
             var img="";
-            if($(key).contents().find("title").prop("text").indexOf("not")){
+            console.log($(key).contents().find("title").prop("text"));
+            if($(key).contents().find("title").prop("text").indexOf("Page not")){
              // $(key).remove();
              return 0;
             }else{
