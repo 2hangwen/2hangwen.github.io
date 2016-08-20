@@ -8,7 +8,7 @@
            //添加hr标签，一条线
            var line_hr="<hr width="+a+"% align=left style='background-color:rgb("+r+","+g+","+b+") ' //>"
           // console.log(rgb);
-           var tag="<br/><a target=view_window  style=text-decoration: none href="+path+"><img style=width:40%;height=20% data-title="+text+" src="+img+"></a>";
+           var tag="<br/><br/><a target=view_window  style=text-decoration: none href="+path+"><img style=width:40%;height=20% data-title="+text+" src="+img+"></a>";
           // console.error(tag);
           //区分log与issues
           // if(tag.indexOf("some_log") > 0){
@@ -36,6 +36,7 @@
              // if (tit){
               // alert(tit);
                add_loghtml($(key).prop("src"),tit,img);
+              // $(this).css(this":hover::after{context:attr(data-title);}");
                //清空iframe里的数据
                //$(key).prop("src","");
                $(key).remove();
