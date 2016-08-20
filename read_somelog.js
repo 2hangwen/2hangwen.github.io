@@ -5,6 +5,6 @@ function read_log(){
      var tag="<iframe id="+filename+" src=some_log/"+filename+" onload=get_iframe_title(this.id) ><iframe>";
      console.log(tag);
     // $("body").append(tag);
-     (tag).insertBefore("iframe#music163");
+     $(tag).insertBefore("iframe#music163");
   }
 } 
