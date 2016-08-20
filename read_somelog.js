@@ -1,3 +1,24 @@
+       function add_loghtml(path,text,img="/2012.jpg"){
+       	  //产生随机浮点，然后转为整形，为rgb（不是rgba）取色做准备
+           var r=parseInt(Math.random()*2);
+           var g=parseInt(Math.random()*255);
+           var b=255;
+           var a=parseInt(Math.random()*100);
+           var rgb=" background: linear-gradient(to right,#ffffff,rgb("+r+","+g+","+b+")) ";
+           //添加hr标签，一条线
+           var line_hr="<hr width="+a+"% align=left style='background-color:rgb("+r+","+g+","+b+") ' //>"
+          // console.log(rgb);
+           var tag="<br/><a target=view_window  style=text-decoration: none href="+path+"><img style=width:10%;height=10% data-title="+text+" src="+img+"></a>"+line_hr;
+          // console.error(tag);
+          //区分log与issues
+          // if(tag.indexOf("some_log") > 0){
+           	$("div#log").append(tag);
+          // }else{
+          //      $("div#issues").append(tag);
+          // }
+       }
+
+
   //获取加载了iframe里的内容  
   function get_iframe(t) {
             var key = "iframe#" + t;
@@ -14,7 +35,7 @@
               console.log(img);
              // if (tit){
               // alert(tit);
-               add_log($(key).prop("src"),tit);
+               add_loghtml($(key).prop("src"),tit,img);
                //清空iframe里的数据
                //$(key).prop("src","");
                $(key).remove();
