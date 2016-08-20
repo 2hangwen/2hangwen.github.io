@@ -4,7 +4,7 @@
             var tit="";
             var img="";
             //console.log($(key).contents().find("title").prop("text"));
-            if($("iframe#23").contents().find("h1").eq(0).text() == "404" ){
+            if($(key).contents().find("h1").eq(0).text() == "404" ){
                $(key).remove();
                return 0;
             }else{
