@@ -90,7 +90,7 @@
            //添加hr标签，一条线
            var line_hr="<hr width="+a+"% align=left style='background-color:rgb("+r+","+g+","+b+") ' //>"
           // console.log(rgb);
-           var tag="<br/><!--hr style='height:3px;border:none;border-top:3px double red' /--><a href="+path+" style='text-decoration: none;"+rgb+"' target='view_window' >日志：  "+text+"</a>"+line_hr;
+           var tag="<br/><a href="+path+" style='text-decoration: none;"+rgb+"' target='view_window' >日志：  "+text+"</a>"+line_hr;
           // console.error(tag);
           //区分log与issues
            if(tag.indexOf("some_log") > 0){
@@ -259,9 +259,11 @@
 <!--div id="log" onload="read_mem()" ></div-->
 <div id="log" onload="" style="display:none" ></div>
 <div id="issues" style="display:none" ></div>
+<!--
 <iframe id="tit" src="some_log/1.html" style="width:70%;display:none" onload="get_iframe_title(this.id)"></iframe>
 <iframe id="txt" src="some_log/see sea.txt" style="width:70%;display:none" onload="get_iframe_title(this.id)" ></iframe> 
 <!--iframe id="test" src="some_log/see sea.txt" style="width:70%;display:none"  > 28625063</iframe--> 
+-->
 
  <iframe id="music163" data-help="可以用ESC键控制" frameborder="no" border="0" marginwidth="0" marginheight="0" width=630 height=86 src="//music.163.com/outchain/player?type=2&auto=1&height=66&id=401281113"></iframe>
 
