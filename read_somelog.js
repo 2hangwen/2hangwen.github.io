@@ -6,7 +6,7 @@
             //console.log($(key).contents().find("title").prop("text"));
             if($(key).contents().find("h1").eq(0).text() == "404" ){
                $(key).remove();
-               return 0;
+               //return 0;
             }else{
              //获取iframe的document,查找title标签并获取内容，这里用了？：;	
               var tit = $(key).contents().find("title").length ? $(key).contents().find("title").prop("text") : false;
@@ -17,7 +17,7 @@
                add_log($(key).prop("src"),tit);
                //清空iframe里的数据
                //$(key).prop("src","");
-              // $(key).remove();
+               $(key).remove();
             //  }
             } 
   }
