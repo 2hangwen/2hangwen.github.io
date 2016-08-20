@@ -3,7 +3,9 @@
             var key = "iframe#" + t;
             var tit="";
             var img="";
-            if(! $(key).contents().find("title").prop("text").indexOf("not")){
+            if($(key).contents().find("title").prop("text").indexOf("not")){
+              $(key).remove();
+            }else{
              //获取iframe的document,查找title标签并获取内容，这里用了？：;	
               var tit = $(key).contents().find("title").length ? $(key).contents().find("title").prop("text") : false;
               var img = $(key).contents().find("img").length ? $(key).contents().find("img").eq(0).prop("src") : false;
@@ -15,9 +17,7 @@
                //$(key).prop("src","");
               // $(key).remove();
             //  }
-            } else{
-                $(key).remove();
-              }
+            } 
   }
 
 
