@@ -6,7 +6,7 @@
             if($(key).length){
              //获取iframe的document,查找title标签并获取内容，这里用了？：;	
               var tit = $(key).contents().find("title").length ? $(key).contents().find("title").prop("text") : false;
-              var img = $(key).contents().find("image").length ? $(key).contents().find("image").eq(0).prop("src") : false;
+              var img = $(key).contents().find("img").length ? $(key).contents().find("img").eq(0).prop("src") : false;
               console.log(img);
               if (tit && img){
               // alert(tit);
