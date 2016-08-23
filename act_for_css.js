@@ -36,7 +36,7 @@
    function create_menu_bycss(){
        $("style").eq(0).append("div#menu span div#ds{float: left;width: 100px;height: 100px;background: orange;border-radius: 100px;}");
        $("div#menu").append("<span> <div id=ds ><div style=text-align:center;line-height:100px >给我留言</div> </div></span>");
-       $("div#menu span div#ds").click(function(){$("div#ds-reset").toggle()});
+       $("div#menu span div#ds").click(function(){$("section#comments").toggle()});
        
        $("style").eq(0).append("div#menu span div#life{float: left;width: 100px;height: 100px;background: skyblue;border-radius: 100px;}");
        $("div#menu").append("<span><div id=life ><div style=text-align:center;line-height:100px >风言风语</div> </div></span> "); 
