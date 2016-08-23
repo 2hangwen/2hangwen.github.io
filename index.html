@@ -13,8 +13,10 @@
        audio#mp3:hover ~span[id $= help]{ display:block;position:absolute;position:fixed;top:95%;left:55%;color:orangered;font-size:150%}
        /*div#log a,div#log a p {background: linear-gradient(to right,#ffffff,blue);width:20%; }*/
        div#log a,div#log a p {width:20%; }
-       div#log a:hover::after {
-       	    height:55%;
+       div#log div a:hover::after {
+       	  position:absolute;
+       	  top:50%;
+       	  left:20%;
        	  content:attr(data-title);
        	  font-size:100%;
        	  display:block;
@@ -23,9 +25,10 @@
        	   	    width:50%;
        	  border:10px solid black;
        	  border-radius:100px;
-       	  */
+       	  
        	  text-align:center;
        	  line-height:0px;
+       	  */
        	  
        }
     </style>
