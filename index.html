@@ -13,24 +13,17 @@
        audio#mp3:hover ~span[id $= help]{ display:block;position:absolute;position:fixed;top:95%;left:55%;color:orangered;font-size:150%}
        /*div#log a,div#log a p {background: linear-gradient(to right,#ffffff,blue);width:20%; }*/
        div#log a,div#log a p {width:20%; }
+       div#log div{position:relative;}
        div#log div a:hover::after {
-       	  position:relative;
-       	  top:50%;
-       	  left:20%;
-       	  content:attr(data-title);
-       	  font-size:100%;
-       	  display:block;
-       	  color:skyblue;
-       	   	  /*
-       	   	    width:50%;
-       	  border:10px solid black;
-       	  border-radius:100px;
-       	  
-       	  text-align:center;
-       	  line-height:0px;
-       	  */
-       	  
+             position:absolute;
+       	     top:45%;
+       	     left:0%;
+       	     content:attr(data-title);
+       	     font-size:150%;
+       	     display:block;
+       	     color:skyblue;
        }
+    
     </style>
     <script  src="https://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
