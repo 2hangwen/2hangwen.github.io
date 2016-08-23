@@ -14,9 +14,16 @@
        /*div#log a,div#log a p {background: linear-gradient(to right,#ffffff,blue);width:20%; }*/
        div#log a,div#log a p {width:20%; }
        div#log div{position:relative;}
+       @keyframes xz{
+       	            from{transform: rotateX(0deg)}
+                   to{transform:rotateX(360deg)}
+       }
        div#log div a img:hover {
+       	          /*
                    position: relative;
                    transform: rotate(186deg);
+                   */
+                    animation: xz 3s infinite;
        }
        div#log div a:hover::after {
              position:absolute;
