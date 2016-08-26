@@ -1,0 +1,344 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script src="https://code.jquery.com/jquery.min.js" >  </script>
+<style>
+/*canvas{ margin:0; padding:0;display:block; border:1px solid red}*/
+#canvas{ display:block; border:1px solid #999; margin:40px auto auto auto;position:absolute;top:0%;left:5%}
+</style>
+</head>
+
+<body>
+<script>
+	var c;
+	var imgdata;
+	$(function() {
+      draw();
+		clear();
+		txt();
+	});
+
+	function draw(){
+		c = $("canvas#canvas")[0].getContext("2d");
+		imgdata= c.createImageData(100,100);
+		for(i=0;i<imgdata.data.length;i+=4){
+			imgdata.data[i+0]=255;
+			imgdata.data[i+1]=0;
+			imgdata.data[i+2]=0;
+			imgdata.data[i+3]=255;
+		}
+		c.putImageData(imgdata,90,1);
+	}
+
+	function clear(){
+		var red=$("canvas").eq(0);
+		c.clearRect(0,0,red.width(),red.height());
+	}
+
+
+	function yun(){
+		c.fillStyle="rgba(255, 100, 20, 255)";
+
+		for(i=0;i<10;++i) {
+			c.beginPath();
+			c.arc(200*1, 50*i, 3*i, 0, 2 * Math.PI, true);
+			c.fill();
+			c.font="3px Arial";
+			c.fillStyle="blue";
+			c.fillText(i,200-(3*i),50*i);
+			//c.stroke();
+			c.closePath();
+		}
+	}
+
+	 function lizi(){
+		 c.fillStyle="rgba(255,10,200,255)";
+		 c.arc(150,300,10,0,Math.PI*2,true);
+		 c.fill()
+	 }
+	var dot=[];
+	function  bb(){
+		for(i in dot) {
+			c.beginPath();
+			r=parseInt(Math.random()*255);
+			g=parseInt(Math.random()*255);
+			b=parseInt(Math.random()*255);
+			c.fillStyle="rgba("+r+","+g+","+b+",255)";
+			c.arc((dot[i][0]),dot[i][1],2,0,Math.PI*2,true);
+			c.fill();
+			c.closePath();
+		}
+
+	}
+	function txt(a="风"){
+		//var a="他强任他强，清风拂山岗";
+		c.font='200px Arial';
+		c.fillStyle='skyblue';
+		c.fillText(a,20,250);
+
+//		c.font='50px Arial';
+//		c.strokeText(a,110,100);
+	}
+
+	function aa(){
+		function a(v){
+			alert(v);
+		}
+
+		w=$("canvas")[0].width;
+		h=$("canvas")[0].height;
+//alert(w+","+h) 300 150
+
+		canvas=$("canvas")
+		c=canvas[0].getContext("2d")
+
+//		c.fillStyle="red";
+//		c.fillText("wen",150,70)
+		txt();
+
+//c.closePath();
+		c.arc(100,100,3,0,Math.PI*2,true);
+		c.fill();
+
+		imgdata=c.getImageData(0,0,w,h);
+//a(imgdata.data.length)
+		var count=0;
+
+		for(m=0;m<w;m+=3){
+			for(n=0;n<h;n+=3){
+				x=n;
+				y=m;
+				pos=[y,x];
+				at=n*w+m;
+				if(imgdata.data[at] == 255){
+					console.log(at);
+					++count;
+					dot.push(pos);
+				}
+
+			}
+
+		}
+		console.log(count);
+
+	}
+
+</script>
+<canvas id="canvas" width="1200px" height="1500px"></canvas>
+<canvas id="myCanvas"    width="880" height="1000"; ></canvas>
+
+
+<audio id="mp3" controls="controls"  loop=true  >
+        <source src="https://luoo-mp3.kssws.ks-cdn.com/low/luoo/radio732/01.mp3" type="audio/mpeg">
+ </audio>
+
+<scriptttttt style="display: none;">
+
+window.onload=function(){
+	var canvas=document.getElementById("canvas");
+	canvas.width=600;
+	canvas.height=400;
+	var contxt=canvas.getContext('2d');	
+	var i=0;
+	/*style="float:right;" position:fixed;left:0;top:0;z-index:5;
+	contxt.beginPath();
+	contxt.arc(200,200,100,0,2*Math.PI,true);
+	//contxt.closePath();
+	contxt.fillStyle='#333';
+	contxt.fill();
+	contxt.lineWidth='3';
+	contxt.strokeStyle='#ccc';
+	contxt.stroke();*/
+	
+	setInterval(function(){
+		var r=6;
+		contxt.clearRect(0,0,12*(r+1),14*(r+1));
+		draw(0,0,i,r);	
+		i=i+1;
+		
+		if(i > sb.length-1){
+			i=0;	
+		}
+	},1000);
+	
+	
+	
+	function draw(x,y,num,r){
+		for(var i=0;i<sb[num].length;i++){
+			for(var j=0;j<sb[num][i].length;j++){
+				contxt.beginPath();
+				contxt.arc(r*2*(j+1)+x,r*2*(i+1)+y,(r-1)*sb[num][i][j],0,2*Math.PI);	
+				contxt.closePath();
+				contxt.fillStyle='#333';
+				contxt.fill();
+				//move(x,y,i,j,r);
+			}	
+		}	
+	}
+	
+	/*function move(x,y,num,r){
+		var ballvx= parseInt(ball.vx);
+		var ballvy=parseInt(ball.vy);
+		var ballx= parseInt(ball.x);
+		var bally=parseInt(ball.y);
+		var ballg=parseInt(ball.g);
+		setInterval(function(){
+			contxt.clearRect(0,0,contxt.canvas.width,contxt.canvas.height);
+			for(var i=0;i<sb[num].length;i++){
+				for(var j=0;j<sb[num][i].length;j++){
+					ballx=parseInt(Math.random()*10);
+					bally=parseInt(Math.random()*4);
+					contxt.beginPath();
+					contxt.arc(r*2*(j+1)+ballx+x,r*2*(i+1)+bally+y,(r-1)*sb[1][i][j],0,2*Math.PI);
+					contxt.arc(ballx,bally,r,0,2*Math.PI);	
+					contxt.arc(ballx,bally,r,0,2*Math.PI);	
+					contxt.closePath();	
+					contxt.fillStyle=ball.color;
+					contxt.fill();
+				}
+			}
+			ballvy+=ballg	
+			ballx+=ballvx;
+			bally+=ballvy;
+			if(bally>=400-r){
+				bally=400-r;
+				ballvy=-ballvy*0.8;
+			}	
+			
+		},30);
+	}
+	move(0,0,1,8);*/
+	
+}
+
+var ball={x:100,y:0,vx:Math.random()*8,vy:Math.random()*-4,g:2,color:'#ff0'};
+
+var sb=[
+	[
+		[0,1,1,1,1,0],
+		[1,1,1,1,1,1],
+		[1,0,0,0,0,0],
+		[1,1,1,1,1,1],
+		[0,0,0,0,1,1],
+		[1,1,1,1,1,1],
+		[0,1,1,1,1,0]
+	],//s
+	[
+		[1,1,1,1,1,0],
+		[1,1,1,1,1,1],
+		[1,0,0,0,0,1],
+		[1,1,1,1,1,1],
+		[1,0,0,0,1,1],
+		[1,1,1,1,1,1],
+		[1,1,1,1,1,0]
+	],//b
+	[
+		[1,1,0,0,1,1],
+		[1,1,0,0,1,1],
+		[0,1,1,0,1,1],
+		[0,0,1,1,1,0],
+		[0,0,1,1,0,0],
+		[0,1,1,0,0,0],
+		[1,1,0,0,0,0]
+	],//y
+	[
+		[0,0,0,0,0,0],
+		[0,0,0,0,0,0],
+		[0,0,1,1,0,0],
+		[0,1,1,1,1,0],
+		[0,1,1,1,1,0],
+		[0,0,1,1,0,0],
+		[0,1,1,0,0,0]
+		
+	],//,
+	[
+		[1,1,1,1,1,0],
+		[1,1,0,0,1,1],
+		[1,1,0,0,1,1],
+		[1,1,1,1,1,0],
+		[1,1,0,0,0,0],
+		[1,1,0,0,0,0],
+		[1,1,0,0,0,0]
+		
+	],
+	[
+		[1,1,1,1,1,0],
+		[1,1,0,0,1,1],
+		[1,1,0,0,1,1],
+		[1,1,0,0,1,1],
+		[1,1,0,0,1,1],
+		[1,1,0,0,1,1],
+		[1,1,0,0,1,1]
+		
+	]
+];
+
+ var id;
+ $(function () {  
+      var W = 480, H = 800, ctx, angle = 1, len = 20, count = 250;
+	  //angle为直线倾斜度，len为直线长度，count为for一次的个数
+//      W=$(document).width();
+//	  H=$(document).height();
+	 // width="880" height="1000";
+     // $("#myCanvas").css("width","880px");
+	  //$("#myCanvas").css("height","1000px");
+	  var canvas = $("#myCanvas")[0];
+
+	  ctx = canvas.getContext('2d');            
+	  console.log(W, H);            
+	  ctx.strokeStyle = 'rgba(2, 2, 255, 0.7)'; 
+	  //填充颜色
+	  var run = setInterval(draw, 200);  
+	  id=run;
+	  function draw() {                
+	           ctx.clearRect(0, 0, W, H);
+			   //clearRect()清空给定矩形内的指定像素
+			   xiayus();            
+			   }            
+			  
+			  //画线
+     function xiayu(x, y, r) {                
+	         ctx.beginPath(); 
+			 //起始一条路径，或重置当前路径
+			 ctx.moveTo(x, y);
+			 //把路径移动到画布中的指定点，不创建线条
+			 //console.log(y, len);                
+			 ctx.lineTo(x + angle, y + len); 
+			 //添加一个新点，然后在画布中创建从该点到最后指定点的线条
+			 ctx.lineWidth = 2;  
+			 //	返回 ImageData 对象的宽度
+			 ctx.stroke();  
+			 //绘制已定义的路径
+			 }            
+			 
+    function xiayus() {                
+	        for (var i = 1; i <= count; i++) {                    
+			         xiayu(Math.random() * W, Math.random() * H, angle);                
+			}            
+		}        
+					 
+	});
+
+
+function txt(){
+	clearInterval(id);
+var string = "目标文字";
+var t=$("canvas#myCanvas")[0];
+	t=$("canvas")[0];
+context=t.getContext("2d");
+context.beginPath();
+context.font = 'bold 55px Arial';
+context.fillStyle = '#ffff00';
+context.strokeStyle = '#0000ff';
+context.fillText(string , 200,200);//实心文字
+context.strokeText(string ,200,400);//只有字体描边
+context.closePath();
+}
+
+//document.onmousemove=function(e){e=e? e:window.event;document.writeln("X:"+e.screenX+"Y:"+e.screenY);}
+</scriptttttt>
+<canvas id=txt ></canvas>
+</body>
+</html>
