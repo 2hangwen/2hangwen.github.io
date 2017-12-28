@@ -1,4 +1,4 @@
-# [fork] (https://hellooozhangwen.github.io)
+# [fork] (https://hello.github.io)
 
 <h1>hello world</h1>
 
